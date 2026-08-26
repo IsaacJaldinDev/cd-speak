@@ -5,15 +5,16 @@
 // require an HTTP origin).
 
 export const CONFIG = {
-  // Reemplazá esto con el client-side ID cuando tengas la cuenta de LaunchDarkly.
-  CLIENT_SIDE_ID: '',
+  // Client-side ID del environment `demo-community-day` (LaunchDarkly).
+  // No es secreto: LD lo expone al bundle JS por diseño.
+  CLIENT_SIDE_ID: '6a8d2cb9e7ac4a0aa8f5fb6b',
 
   // Flag booleano que se toggea en vivo desde el dashboard.
   FLAG_KEY: 'feature-flag-del-caos',
 
-  // true  = usa mock (no requiere LaunchDarkly, ideal hoy y como backup en el venue).
+  // true  = usa mock (no requiere LaunchDarkly, ideal como backup en el venue).
   // false = usa el SDK real. Se auto-activa si CLIENT_SIDE_ID está vacío.
-  MOCK_MODE: true,
+  MOCK_MODE: false,
 
   // Estado inicial del flag cuando se corre en mock. En vivo será ON.
   MOCK_INITIAL_VALUE: true,
