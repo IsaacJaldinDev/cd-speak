@@ -1,8 +1,9 @@
-import { CONFIG } from './config.js';
+import { CONFIG, loadConfig } from './config.js';
 import { initClient } from './ld.js';
 import { startChaos, stopChaos } from './chaos.js';
 
 (async () => {
+  await loadConfig();
   const client = await initClient();
 
   const apply = (on) => {

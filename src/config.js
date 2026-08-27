@@ -4,10 +4,12 @@
 // Then open http://localhost:8000 — do NOT double-click index.html (ES modules
 // require an HTTP origin).
 
+import { loadEnv } from './env-loader.js';
+
 export const CONFIG = {
-  // Client-side ID del environment `demo-community-day` (LaunchDarkly).
-  // No es secreto: LD lo expone al bundle JS por diseño.
-  CLIENT_SIDE_ID: '6a8d2cb9e7ac4a0aa8f5fb6b',
+  // Cargado en runtime desde `.env` por loadConfig() al startup.
+  // Si `.env` no existe, queda vacío y ld.js cae automáticamente a mock mode.
+  CLIENT_SIDE_ID: '',
 
   // Flag booleano que se toggea en vivo desde el dashboard.
   FLAG_KEY: 'feature-flag-del-caos',
@@ -33,3 +35,11 @@ export const CONFIG = {
   // el contador global sigue subiendo).
   MAX_VISIBLE_ERRORS: 40,
 };
+
+// Puebla CONFIG con los valores de `.env`. Llamar UNA VEZ al startup de la
+// app (en app.js) antes de inicializar el SDK.
+export async function loadConfig() {
+  const env = await loadEnv();
+  CONFIG.CLIENT_SIDE_ID = env.LD_CLIENT_SIDE_ID || '';
+  return CONFIG;
+}
