@@ -14,7 +14,10 @@
   <main id="profile" class="profile">
     <section class="profile-hero">
       <div class="avatar">IJ</div>
-      <h1>Isaac Jaldin</h1>
+      <div class="name-row">
+        <h1>Isaac Jaldin</h1>
+        <span id="availability-badge" class="badge-available" hidden>● Available for hire</span>
+      </div>
       <p class="role">Software Engineer</p>
       <p class="tagline">Shipping software with AI, on the cloud, at speed.</p>
       <div class="stack">
@@ -25,9 +28,29 @@
         <span class="chip">React</span>
         <span class="chip">AWS</span>
       </div>
+
+      <div id="featured-project" class="featured-project" hidden>
+        <div class="fp-label">Featured Project</div>
+        <h3 class="fp-title">CD Speak — Live Feature Flag Demo</h3>
+        <p class="fp-desc">A realtime portfolio powered by LaunchDarkly and AWS — every section you see is behind a flag.</p>
+        <div class="fp-tech">
+          <span class="chip fp-chip">JavaScript</span>
+          <span class="chip fp-chip">LaunchDarkly</span>
+          <span class="chip fp-chip">AWS</span>
+        </div>
+        <a href="#" class="fp-link">View project →</a>
+      </div>
+
       <div class="cta">
         <a href="#" class="btn primary">View portfolio</a>
         <a href="#" class="btn ghost">Get in touch</a>
+      </div>
+
+      <div id="testimonial" class="testimonial" hidden>
+        <blockquote class="testimonial-quote">
+          "Isaac ships fast, thinks in systems, and makes AWS feel simple. One of the best engineers I've worked with."
+        </blockquote>
+        <cite class="testimonial-author">— Colleague, Staff Engineer</cite>
       </div>
     </section>
   </main>

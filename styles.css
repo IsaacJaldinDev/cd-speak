@@ -143,6 +143,122 @@ body {
 }
 .btn.ghost:hover { border-color: var(--accent); transform: translateY(-2px); }
 
+/* ---------- FLAG-CONTROLLED PORTFOLIO ELEMENTS ---------- */
+
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.name-row h1 { margin-bottom: 0; }
+
+.badge-available {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10b981;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  animation: badge-in 0.5s ease-out;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+  white-space: nowrap;
+}
+@keyframes badge-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.featured-project {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-align: left;
+  animation: rise 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+.featured-project::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+}
+.fp-label {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.fp-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+.fp-desc {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+.fp-tech {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.fp-chip {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+}
+.fp-link {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.15s;
+  display: inline-block;
+}
+.fp-link:hover { transform: translateX(3px); }
+
+.testimonial {
+  margin: 2rem auto 0;
+  padding: 1.25rem 1.5rem;
+  max-width: 540px;
+  background: rgba(99, 102, 241, 0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  animation: rise 0.5s ease-out;
+  text-align: left;
+}
+.testimonial-quote {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+.testimonial-author {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: normal;
+  font-weight: 500;
+}
+
 /* ---------- CHAOS (state A — flag ON) ---------- */
 
 .chaos {
